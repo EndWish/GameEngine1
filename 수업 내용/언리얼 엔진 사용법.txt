@@ -23,3 +23,17 @@ outliner에서 A액터를 B액터에 드래그하면 B의 자식으로 설정할
 메테리얼 드래그해서 뷰포트의 물체에 드랍하면 입힐 수 있다.
 
 언리얼에서 모델을 만들때 피벗을 조정한후 로컬좌표계를 월드좌표계와 똑같이 만드는 법 : Modeling Mod - Mode Toolbar - BakeRS
+
+언리얼 엔진의 두가지 함수 : Pure함수 - 판단만 하는 함수, 일반 함수
+
+project setting  - Maps & modies - Default GameMode 수정
+해당 레벨만 바꾸는 법 : settings - world settings - GameMode Override 수정
+DefaultPawn : 플레이어에 사용될 클래스 캐릭터
+
+내가 보는 것 처럼 물체를 이동 : 물체 우클릭 - 파일럿 
+
+카메라 처음 설정 : 카메라 디테일 창  - Auto Activate For Player
+
+하나의 메쉬로 합치기 : 여러 오브젝트 선택 - Actor메뉴 선택 - Merge Actors - 머지 후 피봇(x축이 앞쪽으로) 확인하기
+
+
