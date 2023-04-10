@@ -1,0 +1,22 @@
+라이트를 추가한다.
+
+비행기를 만든다. 무버블 설정
+
+디폴트 폰을 상속해서 플레이어를 만든다. 메쉬 설정, ower no see 체크해제
+스케일 조정.  충돌 범위를 키운다. 
+최상위 컴포넌트를 선택해서 Use Controller Rotation들 체크. add Default Movement Binding을 체크해제
+스프링 암과 카메라 추가. SpringArm의 Enable Camera Lag/Rotation Lag 활성화
+
+상속받아서 게임모드 추가. world setting 수정.
+
+컨트롤러 추가. 게임모드에 적용.
+IA 회전과 가속 추가.  IMC추가
+
+컨트롤러에서 시작할때 get Enhanced input local player subsystem을 추가하고 add mapping context를 추가하서 연결해 준다. 아래 쪽에 있는 mapping Context도 수정해줘야 한다.
+컨트롤러에 Add Yaw Input함수와 Add Pitch Input을 이용하여 회전 구현.
+컨트롤러에 Get Controlled Pawn/ Add Movement input/ get Actor Forward vector/ get world delta seconds 를 이용하여 이동을 구현한다.
+
+cast to 를 이용하여 형변환을 하고 변수를 얻을 수 있다.
+
+액터 블루프린트 추가. Static Mesh 컴포넌트 추가. Shape_Torus메쉬와 Level텍스쳐 추가. 스케일(5,5,5) Sphere Bounding Box스케일(3,3,3) 조정.
+static mesh의 Collision Presets를 NoCollision으로 바꾼다.

@@ -34,7 +34,7 @@ DefaultPawn : 플레이어에 사용될 클래스 캐릭터
 
 카메라 처음 설정 : 카메라 디테일 창  - Auto Activate For Player
 
-하나의 메쉬로 합치기 : 여러 오브젝트 선택 - Actor메뉴 선택 - Merge Actors - 머지 후 피봇(x축이 앞쪽으로) 확인하기
+하나의 메쉬로 합치기(모델 만들기) : 여러 오브젝트 선택 - Actor메뉴 선택 - Merge Actors - 머지 후 피봇(x축이 앞쪽으로) 확인하기
 
 내가 만든 Pawn클래스에서 (self)디테일 창의 Use Controller Roation Pitch/Yaw/Roll을 켜줘야 회전도 적용된다.
 플레이어는 기본적으로 화면에 그려지지 않는다. 그리고 싶다면 => Mesh Component의 Owner No See 비활성화 한다.
@@ -60,3 +60,12 @@ Mapping Context의 Modifiers속성에서 Negate를 추가하면 값이 반대로
 화살표 컴포넌트 : 위치지정 및 방향지정에 유용한 컴포넌트
 
 물리적인 처리를 하기 위해서는 클래스의 Simulate Physics를 체크하고 메쉬에 충동영역을 설정(Num Collision Primitives가 1개 이상)해야 한다. 그리고 details창의 Collision의 Collision Complexity를 Simple And Complex로 바꿔준다.
+
+arrow 컴포넌트의 hidden in Game을 풀어주면 화면에서도 보인다.
+
+컨트롤러의 회전을 따르게 하는 방법 : spring arm의 Use Pawn Control Rotation
+
+애니메이션 임포트 : 메쉬 선택 + Animation의 Advenced탭 설정(Custom Sample Rate)
+애니메이션 적용 : 스켈레톤 메쉬의 디테일 탭에 AnimationMode설정
+
+이동 방향으로 바라보도록 하는 옵션 : Character Movement 컴포넌트에 Orient Rotation to Movement를 키면된다.
