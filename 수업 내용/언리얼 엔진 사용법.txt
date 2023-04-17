@@ -86,7 +86,15 @@ movement 컴포넌트의 Max Acceleration을 줄여서 가속도를 적게 주�
 
 IMC의 Trigger조건을 추가하여 "눌렀을때만" 을 구현할 수 있다.
 
+character movement컴포넌트의 IsFalling : 물체가 떨어지고 있는지 판단해주는 함수
+애니메이션이 끝나면 자동으로 다음 애니메이션으로 넘어가도록 하는 법 : 스테이트 머신의 간선을 선택후 디테일 창에 Automatic Rule Based onSequence를 활성화
+애니메이션이 얼마나 남았는지 리턴해주는 함수 : Time Remaining 함수
+Current Time함수도 있다.
 
+섹션 : 몽타주의 가장 위쪽(Default가 기본적으로 들어가 있는 보라색 노드)라인
+play Anim Montage(모든 섹션을 플레이) vs play Montage(하나의 섹션 실행?, onCompleted노드는 실행이 끝나면 다음 노드로 가도록 함. OnBlendOut은 동작이 끝날쯔음)
+노드에 시계 모양이 있다면 그 노드를 처리하는데 오래 걸린다는 뜻
 
-
+몽타주 애니메이션의 결과는 슬롯이로 들어가게 된다. 여러개의 slot이 모여서 그룹이된다.
+슬롯에 결과가 오면 이전의 애니메이션을 덮어 쓴다.
 
