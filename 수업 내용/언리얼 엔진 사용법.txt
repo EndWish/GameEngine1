@@ -107,3 +107,17 @@ Character - Bones - All Hierachy 를 누르고 조명을 Lighting Only로 해놓
 언리얼 엔진은 포즈의 output을 두 군데에 연결할 수 없다. => 애니메이션 포즈 캐쉬(캐쉬드 포즈)를 이용한다.
 	New Save Cached Pose, Use cached pose 노드를 사용
 
+물체가 운동할때는 simple shape을 사용한다.
+물체가 정지해 있을경우는 simple shape 또는 complex shape 아무거나 사용해도 된다.
+
+컨트롤 + E, 컨트롤 + B로 매쉬창으로 이동가능
+Show - Simple Collision, Complex Collision을 통해 볼 수 있다.
+디테일 창 - Collision Complexity : 충돌체크에 대한 정책
+	Project Default : 프로젝트 세팅 - 물리(physics) - Default Shape Complexity의 설정을 따른다.
+	Use Complex Collision As Simple : Complex Collision을 Simple Collision으로 사용하겠다는 의미
+	Use Simple Collision As Complex : Simple만 사용
+	Simple And Complex : 둘다 사용할 수 있는 정책(기본적으로 움직이는 물체는 Simple Collsi)
+메쉬 창에서 메뉴바의 Collision를 선택해서 Simple Collision을 추가할 수 있다.
+
+움직일때는 Simple Collision을 사용하는 매쉬를 사용하다가 정지하게 되면 Complex Coliision을 가진 매쉬로 바꿔치기 한다.
+
