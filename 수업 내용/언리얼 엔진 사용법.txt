@@ -96,5 +96,14 @@ play Anim Montage(모든 섹션을 플레이) vs play Montage(하나의 섹션 �
 노드에 시계 모양이 있다면 그 노드를 처리하는데 오래 걸린다는 뜻
 
 몽타주 애니메이션의 결과는 슬롯이로 들어가게 된다. 여러개의 slot이 모여서 그룹이된다.
-슬롯에 결과가 오면 이전의 애니메이션을 덮어 쓴다.
+슬롯에 결과가 오면 이전의 애니메이션을 덮어 쓴다.오지 않으면 입력으로 들어온 Source포즈가, 입력이 자체가 없다면 T포즈가 반환된다.
+
+
+Do Once 노드 : 딱 한번만 진행되도록 해줌, Reset을 통해 다시 실행되도록 할 수 있다.
+
+Character - Bones - All Hierachy 를 누르고 조명을 Lighting Only로 해놓으면 뼈대를 보기 쉽다.
+
+특정 부분만 애니메이션을 적용하는 방법 : Layer blend per bone 노드를 추가후 디테일 창에서 Layer Setup - Branch Filters 추가 - Bone Name(어느 노드 부터 적용할 것인가)과 Blend Depth(몇번째 자식 까지 적용할 것인가, 0은 전부)를 적어준다. + Mesh Space Rotation Blend
+언리얼 엔진은 포즈의 output을 두 군데에 연결할 수 없다. => 애니메이션 포즈 캐쉬(캐쉬드 포즈)를 이용한다.
+	New Save Cached Pose, Use cached pose 노드를 사용
 
