@@ -91,7 +91,7 @@ character movement컴포넌트의 IsFalling : 물체가 떨어지고 있는지 �
 애니메이션이 얼마나 남았는지 리턴해주는 함수 : Time Remaining 함수
 Current Time함수도 있다.
 
-섹션 : 몽타주의 가장 위쪽(Default가 기본적으로 들어가 있는 보라색 노드)라인
+섹션 : 몽타주의 가장 위쪽(Default가 기본적으로 들어가 있는 보라색 노드)라인, Montage Sections탭에서 설정을 해주자.(자동으로 다음 섹션으로 넘어갈 수 있다.)
 play Anim Montage(모든 섹션을 플레이) vs play Montage(하나의 섹션 실행?, onCompleted노드는 실행이 끝나면 다음 노드로 가도록 함. OnBlendOut은 동작이 끝날쯔음)
 노드에 시계 모양이 있다면 그 노드를 처리하는데 오래 걸린다는 뜻
 
@@ -120,4 +120,21 @@ Show - Simple Collision, Complex Collision을 통해 볼 수 있다.
 메쉬 창에서 메뉴바의 Collision를 선택해서 Simple Collision을 추가할 수 있다.
 
 움직일때는 Simple Collision을 사용하는 매쉬를 사용하다가 정지하게 되면 Complex Coliision을 가진 매쉬로 바꿔치기 한다.
+
+언리얼 엔진은 프로젝트간의 마이그레이션 기능을 이용해서 파일을 옮기는 것을 권장한다. 폴더to폴더로 파일을 옮기는 것은 언리얼 엔진 버전이 맞는지 연관된 에셋이 존재하는지 확인해야 한다.
+
+Collision Preset : 오브젝트의 유형을 설정한다. Custom을 통해 직접 하나하나 설정할 수 있다.
+hit 이벤트 -> 충돌 반응이 block으로 되어 있을때 발생
+overlap 이벤트 -> 충돌 반응이 overlap으로 되어 있을때 발생
+overlap과 block이 만나면 overlap됨, ignore와 block이 만나면 ignore됨
+alt + c : 메인 편집창에서 충돌 영역을 확인할 수 있다.
+실행중 + ~(틸다) + (show Collision 명령어) : 충돌 영역을 인게임에서 볼 수 있다.
+충돌 문제 발생시 -> 충돌 shape이 있는지 확인한다 -> Generate Overlap Events를 확인한다 -> Collsision Responses를 확인한다. -> 캐릭터나 원치 않는 오브젝트와 충돌하는지 확인한다
+
+메뉴창의 Make Static Mesh를 통해 스켈레탈 메쉬를 스테틱 메쉬로 만들 수 있다.
+
+소켓 추가 : 뼈의 계층 구조에서 뼈를 우클릭 - add socket, add preset asset을 통해 미리볼 수 있다. 콘텐츠 브라우저에서 칼을 Mesh밑에 컴포넌트로 추가하고 디테일 창에서 Sockets의 Parent Socket을 설정한다.
+
+몽타주에서 우클릭 - add Notify - new 
+
 
