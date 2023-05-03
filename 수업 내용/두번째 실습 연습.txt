@@ -1,0 +1,9 @@
+게임모드 생성
+컨트롤러 생성
+캐릭터로 플레이어 생성 - 스프링암( use Pawn Control Rotation) - 카메라
+Character Movement 컴포넌트에 Orient Rotation to Movement
+Use Controller Rotation 모두 해제한다.
+인풋 처리 IMC - w:스위즐, s :스위즐+니게이트, a : 니게이트
+컨트롤러에서 add mapping, get enhanced해주가.
+
+character Movement노드의 Is Falling
