@@ -130,6 +130,7 @@ overlap과 block이 만나면 overlap됨, ignore와 block이 만나면 ignore됨
 alt + c : 메인 편집창에서 충돌 영역을 확인할 수 있다.
 실행중 + ~(틸다) + (show Collision 명령어) : 충돌 영역을 인게임에서 볼 수 있다.
 충돌 문제 발생시 -> 충돌 shape이 있는지 확인한다 -> Generate Overlap Events를 확인한다 -> Collsision Responses를 확인한다. -> 캐릭터나 원치 않는 오브젝트와 충돌하는지 확인한다
+충돌체크 할때 Generate hit Events 켜져있느지 확인
 
 메뉴창의 Make Static Mesh를 통해 스켈레탈 메쉬를 스테틱 메쉬로 만들 수 있다.
 
@@ -150,3 +151,39 @@ HUD 표시 - HUD액터 생성 후 - Event Receive Draw HUD + Draw Texture 노드
 	물체의 Collision Presets 설정에서 Trace Responses의 Visibility가 설정이 되어있어야(ignore)가 아니여야 충돌체크를 할 수 있다.
 
 데미지 처리 : apply Damage노드를 이용해서 데미지를 줄 수 있다. 데미지를 받은 액터는 Any Damage이벤트를 통해 데미지 처리를 할 수 있다.
+
+액터의 레퍼런스 얻는법:
+블루프린트에서 VARIABLES에 변수를 추가하고 타입을 원하는 타입(Spot Light)으로 바꾼다.
+Instance Editable을 체크 => 레벨에서 디테일 창의 Default에서 편집이 가능해 진다. => 스포이드 버튼을 눌러서 참조할 액터를 레벨에서 선택한다.
+GetActorOfClass : 해당 클래스중 하나의 액터를 가져온다.
+GetAllActorsOfClass : 해당 클래스의 모든 액터를 배열로 가져온다.
+
+bluePrint Interface : 블루프린트 인터페이스를 추가할 수 있다.
+블루프린트 창의 Class Settings를 눌러서 디테일 창에서 Interface에 add버튼을 눌러서 추가할 수 있다.
+
+자식으로 액터를 붙이는 법 : Attach Actor to component, 옵션으로 Snap To Target을 주면 그 위치에 그대로 붙인다.
+자식을 떼내는 법 : Detach From Actor
+
+add Impulse : 속도를 더해준다.(Vel Change 체크)(짧은 시간에 큰 힘을 줄때)
+
+이벤트 추가 : 블루프린트에서 EVENT DISPATCHERS에 추가 -> (발송자는) call [이벤트 이름] 노드를 추가해서 이벤트를 발생시킨다 -> (구독자는) Bind Event to [이벤트 이름] 노드를 추가해서 이벤트를 등록해준다.
+
+set show Mouse Cursor : 마우스를 보이게 한다.
+enable click event : 마우스 클릭 이벤트를 활성화 한다.
+
+LandscapeMode 활성화 - 생성 - Sculpt모드 에서 지형을 바꾼다(Tool Strength : 강도, 브러쉬 모양 변경가능)
+Landscape을 만들때 최대,최저 고저를 설정하고 만들어야 한다.
+scale이 100일때 고저차가 512m이다.
+
+카메라 북마크 : ctrl + 숫자,  이후에 숫자만 누르면 설정한 위치로 순간이동 한다.
+
+LandScape메테리얼 만드는 방법 : 1. 메테리얼에서 LandScapeBlend노드 생성(Layers에 추가)
+					2. LandScape Mode - Paint - 마테리얼의 +버튼 클릭
+
+프로젝트 세팅 - 렌더링 - Support Hardware Ray Tracing : true, Use Hardware Ray Tracing when available : true, auto Exposure : false
+프로젝트 세팅 - 렌더링 - Dynamic Global illumination Method : Lumen
+
+skyLight - Real Time capture : true
+
+Volumatric cloud
+

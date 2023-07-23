@@ -1,0 +1,42 @@
+Material 생성
+MI_생성
+
+SM_Ball_01 크기 조절해서 apply
+
+StaticMeshActor 생성(Ball)
+Mesh를 Sphere로 설정
+MMaterial 설정
+scale 0.3
+CollisionSphere 추가, 크기를 250으로 설정
+DMI 변수 추가.
+Create Dynamic Material Instance 생성 (소스 설정)
+Set Vector Parameter Value 추가. (파라미터 이름 쓰고, 랜던값 연결)
+최상위 노드 simulate Physics 체크
+Class Settings 에서 interface 추가
+Grab 함수에서 Set Simulate Physics, Set Collision enabled 2가지 false로 설정해주고 true를 리턴한다.
+Throw이벤트 추가 : Set Simulate Physics, Set Collision Enabled(StaticMesh, Collision Enabled), Add Impulse, Delay, Set Collision Enabled(Sphere, Query Only)
+
+Componenet Hit를 추가해서 Apply Damage(damaged actor연결)를 추한다.
+
+BallSocket 추가.
+Capsule Component에 Begin Overlap이벤트 추가.
+is Vaild, Grab, If, Set GrabBall, Attach Actor to Componenet를 추가한다.(snap, snap, keep world)
+
+AttackMontage에서 Notifies의 ReleaseBall를 추가.
+EventGraph에서 ReleaseBall 이벤트추가하고 Throw함수 호출
+
+Granny의 Throw함수를 만든다 :
+Is Valid, Detach From Actor, Throw(Message), Set GrabBall 을 추가한다.
+
+좀비 : 
+Simulation Generates Hit Events 체크한다.
+Hit이벤트를 추가, animation을 stop하고, Create Dynamic Material Instance를 하고, set Frozen을 한다.
+
+HookCollision 블루프린트를 추가
+Radius 10짜리 Sphere Collision 추가
+Granny의 Mesh 밑에 child actor로 추가하고 Collision을 활성화 비활성화 처리를 한다.
+Zombie에 begin overlap추가해서 죽도로 만든다.
+
+
+
+
